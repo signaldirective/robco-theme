@@ -1,0 +1,54 @@
+# ────────────────────────────────────────────────────────────
+# Omarchy RetroPC Theme for Alacritty
+# By Ron Dilley
+# https://github.com/rondilley
+# ────────────────────────────────────────────────────────────
+
+[window]
+# window padding {px}
+padding.x = 12
+padding.y = 12
+
+[font]
+normal = { family = "ShureTechMono Nerd Font Mono", style = "Regular" }
+bold = { family = "ShureTechMono Nerd Font Mono", style = "Bold" }
+italic = { family = "ShureTechMono Nerd Font Mono", style = "Italic" }
+size = 10
+
+[colors]
+[colors.primary]
+background = "#0A0A08"
+foreground = "#59CF77"
+dim_foreground = "#996600"
+
+[colors.cursor]
+text = "#090A08"
+cursor = "#59CF77"
+
+[colors.vi_mode_cursor]
+text = "#090A08"
+cursor = "#59CF77"
+
+[colors.selection]
+text = "CellForeground"
+background = "#02160C"
+
+[colors.normal]
+black = "#02160C"
+red = "#3DA862"
+green = "#59CF77"
+yellow = "#6FE685"
+blue = "#2E7D4A"
+magenta = "#4DB866"
+cyan = "#2E7D4A"
+white = "#59CF77"
+
+[colors.bright]
+black = "#02160C"
+red = "#3DA862"
+green = "#59CF77"
+yellow = "#6FE685"
+blue = "#2E7D4A"
+magenta = "#4DB866"
+cyan = "#2E7D4A"
+white = "#59CF77"
