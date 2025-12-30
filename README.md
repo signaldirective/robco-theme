@@ -3,7 +3,7 @@
 An Omarchy Theme for your Arch Linux / Hyprland setup based on the RobCo
 Terminals found in the Fallout video game franchise.
 
-![RobCo Omarchy Theme Screenshot](/home/ro/Pictures/preview.png)
+![RobCo Omarchy Theme Screenshot](./preview.png)
 
 # Installation
 
