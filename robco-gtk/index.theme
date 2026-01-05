@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Robco
+Comment=A dark theme with RobCo terminal colors
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Robco
+MetacityTheme=Robco
+IconTheme=Yaru-prussiangreen-dark
+ButtonLayout=:minimize,maximize,close
