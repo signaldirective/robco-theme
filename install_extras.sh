@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# install_extras.sh - Install robco-gtk theme and fastfetch configuration
+# install_extras.sh - Install RobCo theme and fastfetch configuration
 
 # Exit on any error
 set -e
@@ -13,13 +13,13 @@ echo "Starting installation of extras..."
 # Create .themes directory if it doesn't exist
 mkdir -p "$HOME/.themes"
 
-# Copy robco-gtk theme to .themes directory
-if [ -d "robco-gtk" ]; then
-    echo "Copying robco-gtk theme to ~/.themes..."
-    cp -r robco-gtk "$HOME/.themes/"
-    echo "robco-gtk theme installed successfully."
+# Copy RobCo theme to .themes directory
+if [ -d "RobCo" ]; then
+    echo "Copying RobCo theme to ~/.themes..."
+    cp -r RobCo "$HOME/.themes/"
+    echo "RobCo theme installed successfully."
 else
-    echo "Warning: robco-gtk directory not found in current directory."
+    echo "Warning: RobCo directory not found in current directory."
 fi
 
 # Create .config directory if it doesn't exist
@@ -43,7 +43,7 @@ fi
 
 echo "Installation completed successfully!"
 echo "Summary:"
-echo "- robco-gtk theme: ~/.themes/robco-gtk"
+echo "- RobCo theme: ~/.themes/RobCo"
 echo "- fastfetch config: ~/.config/fastfetch"
 if [ -d "$HOME/.config/fastfetch-$TIMESTAMP" ]; then
     echo "- fastfetch backup: ~/.config/fastfetch-$TIMESTAMP"
