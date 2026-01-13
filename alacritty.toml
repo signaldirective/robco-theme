@@ -31,8 +31,8 @@ text = "#090A08"
 cursor = "#59CF77"
 
 [colors.selection]
-text = "CellForeground"
-background = "#02160C"
+text = "#000000"
+background = "#59CF77"
 
 [colors.normal]
 black = "#02160C"
