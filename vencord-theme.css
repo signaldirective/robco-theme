@@ -1,0 +1,659 @@
+/*
+ _______             __         ______            
+/       \           /  |       /      \           
+$$$$$$$  |  ______  $$ |____  /$$$$$$  |  ______  
+$$ |__$$ | /      \ $$      \ $$ |  $$/  /      \ 
+$$    $$< /$$$$$$  |$$$$$$$  |$$ |      /$$$$$$  |
+$$$$$$$  |$$ |  $$ |$$ |  $$ |$$ |   __ $$ |  $$ |
+$$ |  $$ |$$ \__$$ |$$ |__$$ |$$ \__/  |$$ \__$$ |
+$$ |  $$ |$$    $$/ $$    $$/ $$    $$/ $$    $$/ 
+$$/   $$/  $$$$$$/  $$$$$$$/   $$$$$$/   $$$$$$/  
+                                                  
+                                                  
+                                                  
+  ROBCO TERMINAL :: BASED ON PHOSPHOROS by OldJobobo
+*/
+
+:root {
+  --color00: #02160C;
+  --color01: #42A378;
+  --color02: #59CF77;
+  --color03: #6FE685;
+  --color04: #33dd88;
+  --color05: #4DB866;
+  --color06: #2E7D4A;
+  --color07: #59CF77;
+  --color08: #02160C;
+  --color09: #3DA862;
+  --color10: #59CF77;
+  --color11: #6FE685;
+  --color12: #2E7D4A;
+  --color13: #4DB866;
+  --color14: #2E7D4A;
+  --color15: #59CF77;
+  --base00: var(--color00);
+
+  /* Matrix surfaces */
+  --mx-0: color-mix(in srgb, var(--color00) 92%, black);
+  --mx-1: color-mix(in srgb, var(--color00) 82%, black);
+  --mx-2: color-mix(in srgb, var(--color00) 70%, black);
+  --mx-3: color-mix(in srgb, var(--color01) 28%, var(--color00));
+  --mx-4: color-mix(in srgb, var(--color06) 25%, var(--color00));
+  --mx-border: color-mix(in srgb, var(--color07) 28%, transparent);
+
+  /* Matrix glow */
+  --mx-green: var(--color04);
+  --mx-green-soft: color-mix(in srgb, var(--color04) 55%, var(--mx-1));
+  --mx-green-dim: color-mix(in srgb, var(--color04) 30%, var(--mx-1));
+  --mx-amber: var(--color02);
+  --mx-amber-dim: color-mix(in srgb, var(--color02) 40%, var(--mx-1));
+
+  --mx-gap: 12px;
+  --mx-scanline: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--mx-green) 6%, transparent) 0%,
+    transparent 8%,
+    transparent 50%,
+    color-mix(in srgb, var(--mx-green) 4%, transparent) 60%,
+    transparent 100%
+  );
+  --mx-grid: radial-gradient(
+      circle at 1px 1px,
+      color-mix(in srgb, var(--mx-green) 18%, transparent) 0 1px,
+      transparent 1px 100%
+    );
+}
+
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh {
+  /* Backgrounds */
+  --background-primary: var(--mx-1) !important;
+  --background-secondary: var(--mx-0) !important;
+  --background-secondary-alt: var(--mx-1) !important;
+  --background-tertiary: var(--mx-0) !important;
+  --background-accent: var(--mx-2) !important;
+  --background-floating: var(--mx-2) !important;
+
+  --background-base-lowest: var(--mx-0) !important;
+  --background-base-lower: var(--mx-0) !important;
+  --background-base-low: var(--mx-1) !important;
+  --background-base-tertiary: var(--mx-0) !important;
+
+  --background-surface-high: var(--mx-2) !important;
+  --background-surface-higher: var(--mx-2) !important;
+  --background-surface-highest: var(--mx-3) !important;
+  --bg-surface-raised: var(--mx-2) !important;
+  --bg-surface-overlay: var(--mx-1) !important;
+  --bg-base-secondary: var(--mx-0) !important;
+  --bg-base-tertiary: var(--mx-0) !important;
+  --bg-overlay-2: var(--mx-2) !important;
+  --bg-overlay-3: var(--mx-3) !important;
+
+  /* Modifiers */
+  --background-modifier-accent: color-mix(in srgb, var(--mx-3) 60%, transparent) !important;
+  --background-modifier-hover: color-mix(in srgb, var(--mx-green) 10%, var(--mx-2)) !important;
+  --background-modifier-active: color-mix(in srgb, var(--mx-green) 16%, var(--mx-2)) !important;
+  --background-modifier-selected: color-mix(in srgb, var(--mx-green) 20%, var(--mx-2)) !important;
+  --background-mentioned: linear-gradient(90deg, color-mix(in srgb, var(--mx-green) 18%, var(--mx-1)) 0%, var(--mx-1) 100%) !important;
+  --background-mentioned-hover: linear-gradient(90deg, color-mix(in srgb, var(--mx-green) 28%, var(--mx-1)) 0%, var(--mx-1) 100%) !important;
+  --mention-background: linear-gradient(90deg, color-mix(in srgb, var(--mx-green) 22%, var(--mx-1)) 0%, var(--mx-1) 100%) !important;
+  --mention-foreground: var(--mx-green) !important;
+
+  /* Text */
+  --text-normal: #42A378 !important;
+  --text-muted: color-mix(in srgb, var(--color01) 70%, var(--mx-3)) !important;
+  --text-primary: var(--color07) !important;
+  --text-secondary: color-mix(in srgb, var(--color07) 70%, var(--mx-4)) !important;
+  --header-primary: var(--color13) !important;
+  --header-secondary: color-mix(in srgb, var(--color13) 70%, var(--mx-4)) !important;
+  --interactive-normal: var(--color07) !important;
+  --interactive-hover: var(--color13) !important;
+  --interactive-active: var(--color04) !important;
+  --interactive-muted: var(--mx-4) !important;
+
+  /* Accents */
+  --brand-500: var(--mx-green) !important;
+  --brand-560: var(--mx-green-soft) !important;
+  --text-link: var(--mx-amber) !important;
+  --channel-icon: var(--mx-green) !important;
+  --focus-primary: var(--mx-green) !important;
+  --input-border-focus: var(--mx-green) !important;
+
+  /* Buttons */
+  --button-filled-brand-background: color-mix(in srgb, var(--mx-green) 65%, var(--mx-1)) !important;
+  --button-filled-brand-background-hover: color-mix(in srgb, var(--mx-green) 75%, var(--mx-1)) !important;
+  --button-filled-brand-text: var(--mx-1) !important;
+
+  --button-positive-background: color-mix(in srgb, var(--mx-green) 65%, var(--mx-1)) !important;
+  --button-positive-background-hover: color-mix(in srgb, var(--mx-green) 75%, var(--mx-1)) !important;
+  --button-positive-text: var(--mx-1) !important;
+
+  --button-secondary-background: var(--mx-3) !important;
+  --button-secondary-background-hover: var(--mx-2) !important;
+  --button-secondary-text: var(--color07) !important;
+
+  --button-danger-background: var(--color01) !important;
+  --button-danger-background-hover: color-mix(in srgb, var(--color01) 85%, white) !important;
+  --button-danger-text: var(--mx-1) !important;
+
+  /* Status */
+  --status-positive: var(--mx-green) !important;
+  --status-warning: var(--mx-amber) !important;
+  --status-danger: var(--color01) !important;
+}
+
+/* Message text color override */
+:is(.theme-dark, .theme-darker, .theme-midnight, .visual-refresh)
+  :is([class*="messageContent"], [class*="markup"]) {
+  color: #409931 !important;
+}
+
+body {
+  letter-spacing: 0.3px;
+}
+
+/* Matrix HUD framing */
+[class*="sidebar"],
+[class*="chatContent"] {
+  background-color: var(--mx-0) !important;
+  border: 1px solid var(--mx-border) !important;
+  border-radius: 14px !important;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--mx-green) 6%, transparent) !important;
+}
+
+[class*="sidebar"] {
+  margin: 0 var(--mx-gap) var(--mx-gap) var(--mx-gap) !important;
+}
+
+[class*="chatContent"] {
+  margin: 0 var(--mx-gap) var(--mx-gap) 0 !important;
+  overflow: hidden !important;
+}
+
+/* Sidebar resize handle / spacer */
+[class*="sidebarResizeHandle"] {
+  border: 0 !important;
+  background: transparent !important;
+}
+
+/* Scanline + grid texture */
+[class*="sidebar"] [class*="sidebarList"],
+[class*="chatContent"] {
+  background-image: var(--mx-scanline), var(--mx-grid) !important;
+  background-size: 100% 6px, 18px 18px !important;
+  background-position: 0 0, 0 0 !important;
+}
+
+/* Channel list box: remove frame, keep separator line */
+[class*="sidebar"] [class*="sidebarList"] {
+  border: 0 !important;
+  border-left: 1px solid var(--mx-border) !important;
+  border-radius: 0 !important;
+}
+
+/* Username color: keep role colors, fallback to amber when none */
+[class*="username"] {
+  color: inherit !important;
+  text-shadow: 0 0 10px color-mix(in srgb, var(--mx-amber) 55%, transparent) !important;
+}
+
+[class*="username"]:not([style]) {
+  color: var(--mx-amber) !important;
+}
+
+/* Channel row accents */
+a[data-list-item-id^="channels___"][aria-selected="true"] {
+  background-color: color-mix(in srgb, var(--mx-green) 18%, var(--mx-2)) !important;
+  box-shadow: inset 3px 0 0 0 var(--mx-green) !important;
+  border-radius: 10px !important;
+}
+
+a[data-list-item-id^="channels___"]:hover {
+  background-color: color-mix(in srgb, var(--mx-green) 10%, var(--mx-2)) !important;
+  box-shadow: inset 3px 0 0 0 var(--mx-amber) !important;
+  border-radius: 10px !important;
+}
+
+/* Channel icon base */
+a[data-list-item-id^="channels___"] svg,
+a[data-list-item-id^="channels___"] svg path {
+  fill: color-mix(in srgb, #faff00 40%, var(--mx-1)) !important;
+  color: color-mix(in srgb, #faff00 40%, var(--mx-1)) !important;
+}
+
+/* Channel name base (read / not selected) */
+a[data-list-item-id^="channels___"]:not([class*="modeUnread"]):not([aria-selected="true"]) [class*="name"],
+a[data-list-item-id^="channels___"]:not([class*="modeUnread"]):not([aria-selected="true"]) [class*="name"] * {
+  color: var(--color07) !important;
+  opacity: 0.55 !important;
+}
+
+/* Vesktop/Vencord fallback */
+#channels [class*="name__"] {
+  color: var(--color07) !important;
+  opacity: 0.55 !important;
+}
+
+#channels [class*="modeUnread"] [class*="name__"] {
+  color: var(--mx-green) !important;
+  opacity: 1 !important;
+  font-weight: 600 !important;
+}
+
+/* Unread channel icon */
+a[data-list-item-id^="channels___"][class*="modeUnread"] svg,
+a[data-list-item-id^="channels___"][class*="modeUnread"] svg path,
+[class*="modeUnread"] [class*="icon__"],
+[class*="modeUnread"] [class*="icon__"] path {
+  fill: #faff00 !important;
+  color: #faff00 !important;
+}
+
+/* Unread channel name */
+a[data-list-item-id^="channels___"][class*="modeUnread"] [class*="name"],
+a[data-list-item-id^="channels___"][class*="modeUnread"] [class*="name"] * {
+  color: var(--mx-green) !important;
+  opacity: 1 !important;
+  font-weight: 600 !important;
+}
+
+/* Text input focus ring */
+[class*="channelTextArea"]:focus-within {
+  box-shadow: 0 0 0 1px var(--mx-green) inset, 0 0 12px color-mix(in srgb, var(--mx-green) 25%, transparent) !important;
+  border-color: var(--mx-green) !important;
+}
+
+[class*="channelTextArea"]:focus-within [class*="scrollableContainer"] {
+  box-shadow: none !important;
+  border-color: inherit !important;
+}
+
+/* Post style input padding */
+[class*="textAreaForPostCreation"] {
+  padding: 8px 10px !important;
+  box-sizing: border-box !important;
+}
+
+/* Post media button spacing */
+[class*="container__94439"] {
+  margin-left: 8px !important;
+}
+
+/* Chat input box background */
+[class*="channelTextArea"] {
+  background: var(--mx-0) !important;
+  border: 1px solid var(--mx-border) !important;
+  border-radius: 12px !important;
+}
+
+[class*="channelTextArea"] [class*="scrollableContainer"] {
+  background: var(--mx-1) !important;
+  border: 1px solid color-mix(in srgb, var(--mx-green) 18%, transparent) !important;
+  border-radius: 10px !important;
+  color: #409931 !important;
+}
+
+/* Avoid double borders when reply bar expands the input */
+[class*="channelTextArea"]:has([class*="replyBar"], [class*="attachedBars"]) [class*="scrollableContainer"] {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Restore rounded top corners when reply/attachment bars are visible */
+[class*="channelTextArea"]:has([class*="replyBar"], [class*="attachedBars"]) {
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+[class*="channelTextArea"] [class*="replyBar"],
+[class*="channelTextArea"] [class*="attachedBars"] {
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+}
+
+/* Chat input buttons (attach/gift/gif/etc) */
+[class*="scrollableContainer"] [class*="buttons__"] {
+  color: #409931 !important;
+}
+
+[class*="scrollableContainer"] [class*="buttons__"] svg,
+[class*="scrollableContainer"] [class*="buttons__"] path {
+  color: #409931 !important;
+  fill: currentColor !important;
+}
+
+[class*="scrollableContainer"] [class*="buttons__"] [class*="sprite__"] {
+  color: #409931 !important;
+  filter: brightness(0) saturate(100%) invert(54%) sepia(35%) saturate(550%) hue-rotate(74deg) brightness(92%) contrast(96%) !important;
+}
+
+/* Force green on the sprite-based button */
+[class*="scrollableContainer"] [class*="buttons__"] .sprite__04eed.spriteGreyscale__04eed.active__04eed {
+  filter: brightness(0) saturate(100%) invert(54%) sepia(35%) saturate(550%) hue-rotate(74deg) brightness(92%) contrast(96%) !important;
+  opacity: 1 !important;
+}
+
+/* Mention highlight */
+div[class*="mentioned"],
+li[class*="mentioned"] {
+  background: var(--background-mentioned) !important;
+  box-shadow: none !important;
+  border-left: 3px solid var(--mx-green) !important;
+  border-radius: 10px !important;
+  position: relative;
+}
+
+div[class*="mentioned"]:hover,
+li[class*="mentioned"]:hover {
+  background: var(--background-mentioned-hover) !important;
+}
+
+div[class*="mentioned"]::before,
+li[class*="mentioned"]::before {
+  content: none !important;
+}
+
+/* Replying highlight */
+div[class*="replying"],
+li[class*="replying"] {
+  background: var(--background-mentioned) !important;
+  box-shadow: none !important;
+  border-left: 3px solid var(--mx-amber) !important;
+  border-radius: 10px !important;
+  position: relative;
+}
+
+div[class*="replying"]:hover,
+li[class*="replying"]:hover {
+  background: var(--background-mentioned-hover) !important;
+}
+
+div[class*="replying"]::before,
+li[class*="replying"]::before {
+  content: none !important;
+}
+
+/* Message hover */
+[id^="chat-messages-"] [class*="messageListItem"]:hover,
+[id^="chat-messages-"] [class*="messageListItem"]:hover > [class*="message"],
+[id^="chat-messages-"] [class*="messageListItem"]:hover [class*="contents"] {
+  background: color-mix(in srgb, var(--mx-green) 10%, var(--mx-2)) !important;
+  border-radius: 10px !important;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--mx-green) 18%, transparent) !important;
+}
+
+/* Unread indicators & badges */
+div[class*="unreadBar"],
+span[class*="unreadBar"],
+div[class*="unreadPill"],
+span[class*="unreadPill"],
+div[class*="numberBadge"],
+span[class*="numberBadge"],
+div[class*="textBadge"],
+span[class*="textBadge"],
+div.unread__2ea32.unreadImportant__2ea32 {
+  background-color: var(--mx-green) !important;
+  color: var(--mx-1) !important;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--mx-green) 40%, transparent) !important;
+}
+
+/* Unread mentions badge chip */
+div[class*="unreadMentionsIndicatorBottom"] [class*="numberBadge"] {
+  background-color: var(--mx-1) !important;
+  border: 1px solid var(--mx-green) !important;
+  color: var(--mx-green) !important;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--mx-green) 20%, transparent) !important;
+}
+
+/* Channel list unread mentions bar (bottom) */
+div[class*="unreadMentionsIndicatorBottom"] {
+  background: color-mix(in srgb, var(--mx-1) 85%, var(--mx-green) 15%) !important;
+  border-top: 1px solid color-mix(in srgb, var(--mx-green) 35%, transparent) !important;
+  color: var(--mx-green) !important;
+  box-shadow: 0 -6px 16px color-mix(in srgb, var(--mx-green) 18%, transparent) !important;
+}
+
+div[class*="unreadMentionsIndicatorBottom"] > div {
+  background: var(--mx-1) !important;
+  border: 1px solid var(--mx-green) !important;
+  border-radius: 10px !important;
+  padding: 6px 10px !important;
+  color: inherit !important;
+}
+
+/* Channel list unread count: target the "N New" label in channel rows */
+#channels [class*="children__"] [data-text-variant="text-xs/semibold"] {
+  color: #faff00 !important;
+  text-transform: lowercase !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* New messages bar */
+div#---new-messages-bar.divider__5126c {
+  --divider-color: color-mix(in srgb, var(--mx-green) 55%, transparent) !important;
+}
+
+div#---new-messages-bar.divider__5126c.hasContent__5126c {
+  background:
+    linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--mx-green) 35%, transparent) 20%, color-mix(in srgb, var(--mx-green) 35%, transparent) 70%, transparent 84%, transparent 100%) !important;
+  border-radius: 12px !important;
+  padding: 4px 54px 4px 10px !important;
+  margin: 14px 0 6px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+}
+
+div#---new-messages-bar.divider__908e2.isUnread__908e2 {
+  --divider-color: color-mix(in srgb, var(--mx-green) 55%, transparent) !important;
+}
+
+div#---new-messages-bar.divider__908e2.isUnread__908e2 .content__908e2 {
+  background: color-mix(in srgb, var(--mx-1) 85%, var(--mx-green) 15%) !important;
+  border: 1px solid color-mix(in srgb, var(--mx-green) 55%, transparent) !important;
+  color: var(--mx-green) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 600 !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--mx-green) 25%, transparent), 0 6px 18px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Jump to present / new messages pill */
+button[class*="jumpToPresentBar"],
+div[class*="jumpToPresentBar"] {
+  background: var(--mx-green) !important;
+  color: var(--mx-1) !important;
+  border-color: var(--mx-green) !important;
+}
+
+/* New messages bar / jump to new messages */
+div[class*="newMessagesBar"] {
+  background: color-mix(in srgb, var(--mx-1) 88%, var(--mx-green) 12%) !important;
+  color: var(--mx-green) !important;
+  border: 1px solid color-mix(in srgb, var(--mx-green) 45%, transparent) !important;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--mx-green) 20%, transparent) !important;
+}
+
+div[class*="newMessagesBar"] [class*="barButtonAlt"],
+div[class*="newMessagesBar"] [class*="barButtonBase"] {
+  color: var(--mx-green) !important;
+}
+
+/* Mention count pills */
+span[class*="mention"],
+span[class*="mention"] span {
+  background-color: var(--mx-green) !important;
+  color: var(--mx-1) !important;
+}
+
+/* Inline @mention pills */
+.theme-dark :is([class*="messageContent"], [class*="markup"]) [class*="mention"],
+.theme-darker :is([class*="messageContent"], [class*="markup"]) [class*="mention"],
+.theme-midnight :is([class*="messageContent"], [class*="markup"]) [class*="mention"],
+.visual-refresh :is([class*="messageContent"], [class*="markup"]) [class*="mention"] {
+  background-color: color-mix(in srgb, var(--mx-green) 18%, var(--mx-1)) !important;
+  color: var(--mx-green) !important;
+  border: 1px solid color-mix(in srgb, var(--mx-green) 35%, transparent) !important;
+  box-shadow: none !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  line-height: 1.4 !important;
+  padding: 0.12em 0.55em !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
+  vertical-align: baseline !important;
+  text-shadow: none !important;
+}
+
+/* Reaction hover/selected */
+div[class*="reaction"] {
+  border-radius: 10px !important;
+}
+
+div[class*="reaction"]:hover,
+div[class*="reaction"][class*="reactionMe"] {
+  background: color-mix(in srgb, var(--mx-green) 14%, var(--mx-1)) !important;
+  border-color: color-mix(in srgb, var(--mx-green) 55%, transparent) !important;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--mx-green) 35%, transparent),
+    0 0 8px color-mix(in srgb, var(--mx-green) 20%, transparent) !important;
+}
+
+/* Remove reactions bar hover background from Discord defaults */
+div[class*="reactions__"]:hover {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+
+/* Message action hover */
+div[class*="message"] [class*="button"]:hover,
+div[class*="message"] [class*="icon"]:hover {
+  color: var(--mx-green) !important;
+}
+
+/* Selected channel text */
+a[data-list-item-id^="channels___"][aria-selected="true"] [class*="name"],
+a[data-list-item-id^="channels___"][aria-selected="true"] [class*="name"] * {
+  color: var(--mx-green) !important;
+}
+
+/* Scrollbar hover */
+div[class*="scroller"]::-webkit-scrollbar-thumb:hover {
+  background-color: var(--mx-green) !important;
+}
+
+/* Channel list spine (categories) */
+#channels ul li svg.spine__5b40b,
+#channels ul li svg.spine__5b40b path,
+#channels ul li svg.invertedSpine__5b40b,
+#channels ul li svg.invertedSpine__5b40b path {
+  fill: var(--mx-green) !important;
+  color: var(--mx-green) !important;
+}
+
+/* Message scroller accent */
+div[class*="messagesWrapper"] > div[class*="scroller"] {
+  --scrollbar-auto-thumb: var(--mx-green) !important;
+  --scrollbar-auto-track: color-mix(in srgb, var(--mx-green) 20%, transparent) !important;
+}
+
+/* Channel list scrollbar */
+div[class*="sidebar"] div[class*="scroller"] {
+  --scrollbar-auto-thumb: var(--mx-green) !important;
+  --scrollbar-auto-track: color-mix(in srgb, var(--mx-green) 20%, transparent) !important;
+  padding-bottom: calc(var(--custom-app-panels-height, 0px) + var(--mx-gap)) !important;
+}
+
+/* Code blocks + inline code */
+.theme-dark pre,
+.theme-darker pre,
+.theme-midnight pre,
+.visual-refresh pre {
+  background: color-mix(in srgb, var(--mx-2) 88%, black) !important;
+  border: 1px solid color-mix(in srgb, var(--mx-green) 30%, transparent) !important;
+  border-radius: 10px !important;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--mx-green) 10%, transparent) !important;
+}
+
+.theme-dark :is(pre, code),
+.theme-darker :is(pre, code),
+.theme-midnight :is(pre, code),
+.visual-refresh :is(pre, code) {
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace !important;
+  font-variant-ligatures: none !important;
+}
+
+.theme-dark :is(pre code, .hljs, .codeBlockText),
+.theme-darker :is(pre code, .hljs, .codeBlockText),
+.theme-midnight :is(pre code, .hljs, .codeBlockText),
+.visual-refresh :is(pre code, .hljs, .codeBlockText) {
+  color: var(--text-normal) !important;
+  text-shadow: none !important;
+}
+
+.theme-dark :is(code, .inlineCode),
+.theme-darker :is(code, .inlineCode),
+.theme-midnight :is(code, .inlineCode),
+.visual-refresh :is(code, .inlineCode) {
+  background: color-mix(in srgb, var(--mx-1) 80%, black) !important;
+  border: 1px solid color-mix(in srgb, var(--mx-green) 22%, transparent) !important;
+  border-radius: 6px !important;
+  color: var(--mx-amber) !important;
+  padding: 0.12em 0.35em !important;
+}
+
+/* Highlight.js token tweaks for a cleaner, standard feel */
+.theme-dark :is(.hljs-comment, .hljs-quote),
+.theme-darker :is(.hljs-comment, .hljs-quote),
+.theme-midnight :is(.hljs-comment, .hljs-quote),
+.visual-refresh :is(.hljs-comment, .hljs-quote) {
+  color: color-mix(in srgb, var(--color01) 70%, var(--mx-4)) !important;
+  font-style: italic !important;
+}
+
+.theme-dark :is(.hljs-keyword, .hljs-selector-tag, .hljs-literal),
+.theme-darker :is(.hljs-keyword, .hljs-selector-tag, .hljs-literal),
+.theme-midnight :is(.hljs-keyword, .hljs-selector-tag, .hljs-literal),
+.visual-refresh :is(.hljs-keyword, .hljs-selector-tag, .hljs-literal) {
+  color: var(--mx-green) !important;
+}
+
+.theme-dark :is(.hljs-string, .hljs-doctag),
+.theme-darker :is(.hljs-string, .hljs-doctag),
+.theme-midnight :is(.hljs-string, .hljs-doctag),
+.visual-refresh :is(.hljs-string, .hljs-doctag) {
+  color: var(--mx-amber) !important;
+}
+
+.theme-dark :is(.hljs-number, .hljs-attr, .hljs-attribute),
+.theme-darker :is(.hljs-number, .hljs-attr, .hljs-attribute),
+.theme-midnight :is(.hljs-number, .hljs-attr, .hljs-attribute),
+.visual-refresh :is(.hljs-number, .hljs-attr, .hljs-attribute) {
+  color: color-mix(in srgb, var(--mx-amber) 65%, var(--mx-green)) !important;
+}
+
+.theme-dark :is(.hljs-title, .hljs-section, .hljs-name),
+.theme-darker :is(.hljs-title, .hljs-section, .hljs-name),
+.theme-midnight :is(.hljs-title, .hljs-section, .hljs-name),
+.visual-refresh :is(.hljs-title, .hljs-section, .hljs-name) {
+  color: var(--color13) !important;
+}
+
+/* Links get a subtle console glow */
+.theme-dark a,
+.theme-darker a,
+.theme-midnight a,
+.visual-refresh a {
+  text-shadow: 0 0 10px color-mix(in srgb, var(--mx-amber) 35%, transparent) !important;
+}
+
+/* End */
+/* 26-01-31 */

@@ -1,0 +1,13 @@
+@define-color selected-text #090A08;
+@define-color text #59CF77;
+@define-color base #090A08;
+@define-color border #2E7D4A88;
+@define-color foreground #59CF77;
+@define-color background #090A08;
+@define-color selection-highlight #2E7D4A;
+
+child:selected,
+child:hover {
+  background: @selection-highlight;
+  color: @selected-text;
+}
